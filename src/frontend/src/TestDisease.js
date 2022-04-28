@@ -17,7 +17,7 @@ const TestDisease = () => {
    const [modalShow, setModalShow] = useState(false);
    const [emptyModalShow, setEmptyModalShow] = useState(false);
    const [methodTest,setMethodTest] = useState(-1)
-   const URL = "https://dna-matching.herokuapp.com"
+   const URL = "https://dna-matching-be.herokuapp.com"
 
    const readFile = (e) => {
     setResultShow(false)

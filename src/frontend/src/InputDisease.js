@@ -8,7 +8,7 @@ const InputDisease = () => {
 
   const [diseaseName, setDiseaseName] = useState("");
   const [dnaSequence, setDnaSequence] = useState("");
-  const URL = "https://dna-matching.herokuapp.com";
+  const URL = "https://dna-matching-be.herokuapp.com";
   const [modalShow, setModalShow] = useState(false);
   const [modalSuccessShow, setModalSucessShow] = useState(false);
   const [emptyModalShow, setEmptyModalShow] = useState(false);

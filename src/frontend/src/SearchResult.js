@@ -11,7 +11,7 @@ const SearchResult = () => {
   const [validated, setValidated] = useState(true);
   const [empty,setEmpty] = useState(true);
   const [warningText, setWarningText] = useState("");
-  const URL = "https://dna-matching.herokuapp.com";
+  const URL = "https://dna-matching-be.herokuapp.com";
 
   function addZero(s) {
     return (s.length < 2 ? '0' : '') + s
