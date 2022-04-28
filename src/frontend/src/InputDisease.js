@@ -12,6 +12,7 @@ const InputDisease = () => {
   const [modalShow, setModalShow] = useState(false);
   const [modalSuccessShow, setModalSucessShow] = useState(false);
   const [emptyModalShow, setEmptyModalShow] = useState(false);
+  const [diseaseModalShow, setDiseaseModalShow] = useState(false);
 
   const readFile = (e) => {
     e.preventDefault();
@@ -28,6 +29,7 @@ const InputDisease = () => {
     };
     reader.readAsText(e.target.files[0]);
   };
+  
 
   const sendRequest = () => {
     const datas = {
@@ -35,19 +37,39 @@ const InputDisease = () => {
       dnasequence: dnaSequence, 
     }
     if (diseaseName === "" || dnaSequence === "") {
-      console.log("Please fill in all the fields")
       setEmptyModalShow(true);
     }
     else{
-      axios({
-        method: "post",
-        url: URL + "/disease",
-        data: datas,
-      }).then(function(res) {
-        setModalSucessShow(true);
-        console.log(res);
-      }).catch(function(err) {
-        console.log(err.message);
+      axios(
+        {
+          method: "get",
+          url: URL + "/disease",
+          params: {},
+        }
+      ).then(res => {
+        const disease = res.data.data.data
+        var state = true
+        for (let i = 0; i < disease.length; i++) {
+          if (disease[i] === diseaseName.toLowerCase()) {
+            setDiseaseModalShow(true);
+            state = false;
+            break;
+          }
+        }
+        if (state) {
+          axios({
+            method: "post",
+            url: URL + "/disease",
+            data: datas,
+          }).then(function(res) {
+            setModalSucessShow(true);
+            console.log(res);
+          }).catch(function(err) {
+            console.log(err.message);
+          })
+        }
+      }).catch(err => {
+        console.log(err);
       })
     }
   }
@@ -91,6 +113,31 @@ const InputDisease = () => {
           <h4 >Error Sequence of DNA</h4>
           <p>
             DNA sequence must only contain A, T, C, and G with no lower case letters, no symbols, and no whitespaces.
+          </p>
+        </Modal.Body>
+      </Modal>
+    );
+  }
+
+  function ErrorDisease(props) {
+    // @nelsen TODO: add decoration to modal using css
+    // add color and size
+    return (
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title className = 'modal-text'>
+            {/* Modal heading */}
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body className = 'modal-text'>
+          <h4 ></h4>
+          <p>
+            Disease name already exist in db, please try another name.
           </p>
         </Modal.Body>
       </Modal>
@@ -141,6 +188,7 @@ const InputDisease = () => {
           <ErrorModal show={modalShow} onHide={() => setModalShow(false)}/>
           <SuccessModal show={modalSuccessShow} onHide={() => setModalSucessShow(false)}/>
           <EmptyErrorModal show={emptyModalShow} onHide={() => setEmptyModalShow(false)}/>
+          <ErrorDisease show={diseaseModalShow} onHide={() => setDiseaseModalShow(false)}/>
         </form>
         </div>
       </div>

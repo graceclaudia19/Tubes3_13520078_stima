@@ -12,7 +12,7 @@ import (
 func main() {
 	e := echo.New()
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
-		AllowOrigins: []string{"https://localhost:3000", "https://dna-matching-web.herokuapp.com"},
+		AllowOrigins: []string{"https://localhost:3000", "https://dna-matching-web.herokuapp.com", "https://localhost:3000/"},
 		AllowMethods: []string{echo.GET, echo.HEAD, echo.PUT, echo.PATCH, echo.POST, echo.DELETE},
 		AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept},
 	}))

@@ -43,9 +43,12 @@ func AddUserRecord(c echo.Context) error {
 	} else {
 		status = models.BoyerMoore(DNAdisease.DNASequence, userInputReq.DNASequence)
 	}
-	similarity := models.MovingPatternSimilarity(DNAdisease.DNASequence, userInputReq.DNASequence)
-	if similarity >= 80.0 {
-		status = true
+	similarity := -1.0
+	if DNAdisease.Name != "" {
+		similarity = models.MovingPatternSimilarity(DNAdisease.DNASequence, userInputReq.DNASequence)
+		if similarity >= 80.0 {
+			status = true
+		}
 	}
 
 	newUserRecord := models.UserRecord{

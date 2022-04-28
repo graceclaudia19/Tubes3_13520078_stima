@@ -64,6 +64,10 @@ const TestDisease = () => {
             console.log(res.data.data.data)
             console.log(res.data.data.data.similarity + " hello")
             setStatus(res.data.data.data.predictionstatus)
+            if (res.data.data.data.similarity === -1) {
+              
+
+            }
             if (!res.data.data.data.similarity){
               setSimilarity("0")
             }

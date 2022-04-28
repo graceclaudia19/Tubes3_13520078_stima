@@ -8,5 +8,5 @@ import (
 
 func DiseaseRoute(e *echo.Echo) {
 	e.POST("/disease", controllers.AddDisease)
-	// e.GET("/disease", controllers.GetADiseaseInfo)
+	e.GET("/disease", controllers.GetAllDisease)
 }

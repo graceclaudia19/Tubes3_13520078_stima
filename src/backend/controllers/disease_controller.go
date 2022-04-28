@@ -63,3 +63,28 @@ func getADiseaseInfo(c echo.Context, diseaseName string) (error, models.Disease)
 	}
 	return nil, diseaseInfo
 }
+
+func GetAllDisease(c echo.Context) error {
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	var diseases []string
+	defer cancel()
+
+	results, err := diseaseCollection.Find(ctx, bson.M{})
+
+	if err != nil {
+		return c.JSON(http.StatusInternalServerError, responses.Response{Status: http.StatusInternalServerError, Message: "error", Data: &echo.Map{"data": err.Error()}})
+	}
+
+	//reading from the db in an optimal way
+	defer results.Close(ctx)
+	for results.Next(ctx) {
+		var singleDisease models.Disease
+		if err = results.Decode(&singleDisease); err != nil {
+			return c.JSON(http.StatusInternalServerError, responses.Response{Status: http.StatusInternalServerError, Message: "error", Data: &echo.Map{"data": err.Error()}})
+		}
+
+		diseases = append(diseases, singleDisease.Name)
+	}
+
+	return c.JSON(http.StatusOK, responses.Response{Status: http.StatusOK, Message: "success", Data: &echo.Map{"data": diseases}})
+}
