@@ -12,7 +12,7 @@ const TestDisease = () => {
    const [dnaSequence, setDnaSequence] = useState("")
    const [status, setStatus] = useState("")
    const [similarity, setSimilarity] = useState("")
-   const [warning, setWarning] = useState("")
+   const [warning] = useState("")
    const [resultShow, setResultShow] = useState(false)
    const [modalShow, setModalShow] = useState(false);
    const [emptyModalShow, setEmptyModalShow] = useState(false);

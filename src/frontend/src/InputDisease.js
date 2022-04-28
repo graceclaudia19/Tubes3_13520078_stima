@@ -1,7 +1,6 @@
 import './styles/InputDisease.css';
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import axios from "axios";
-import Button from 'react-bootstrap/Button';
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 

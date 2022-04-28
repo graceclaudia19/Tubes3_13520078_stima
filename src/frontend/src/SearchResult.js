@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import './styles/SearchResult.css';
 import BlogList from "./SearchList";
 import axios from "axios"
@@ -68,7 +68,7 @@ const SearchResult = () => {
     
     //anggepan bener dulu + termasuk kosong, di else nanti disalahin kalau ga nemu pattern apapun
     setValidated(true)
-    if(s != ""){
+    if(s !==""){
       setEmpty(false)
       if (DATE_SLASH.test(s)){
           console.log("DATE_SLASH")
@@ -76,68 +76,68 @@ const SearchResult = () => {
           date = addZero(temp[0]) + '-' + map.get(addZero(temp[1])) + '-' + temp[2]
       } else if (DATE_STRIP.test(s)){
           console.log("DATE_STRIP")
-          var temp = s.split('-')
+          temp = s.split('-')
           date = addZero(temp[0]) + '-' + map.get(addZero(temp[1])) + '-' + temp[2]
       } else if (DATE_SPACE.test(s)){
           console.log("DATE_SPACE")
-          var temp = s.split(' ')
+          temp = s.split(' ')
           date = addZero(temp[0]) + '-' + map.get(addZero(temp[1])) + '-' + temp[2]
       } 
       
       else if (DATE_MONTH_SLASH.test(s)){
           console.log("DATE_MONTH_SLASH")
-          var temp = s.split('/')
+          temp = s.split('/')
           date = addZero(temp[0]) + '-' + getDateWord(temp[1],map) + '-' + temp[2]
       } else if (DATE_MONTH_STRIP.test(s)){
           console.log("DATE_MONTH_STRIP")
-          var temp = s.split('-')
+          temp = s.split('-')
           date = addZero(temp[0]) + '-' + getDateWord(temp[1],map) + '-' + temp[2]
       } else if (DATE_MONTH_SPACE.test(s)){
           console.log("DATE_MONTH_SPACE")
-          var temp = s.split(' ')
+          temp = s.split(' ')
           date = addZero(temp[0]) + '-' + getDateWord(temp[1],map) + '-' + temp[2]
       } 
       
       else if(DATE_SLASH_DISEASE.test(s)){
           console.log("DATE_SLASH_DISEASE")
-          var temp = s.split(' ')
+          temp = s.split(' ')
           var tempDate = temp[0].split('/')
           var tempDisease = temp.slice(1,temp.length).join(' ')
           date = addZero(tempDate[0]) + '-' + map.get(addZero(tempDate[1])) + '-' + tempDate[2]
           disease = tempDisease
       } else if(DATE_STRIP_DISEASE.test(s)){
           console.log("DATE_STRIP_DISEASE")
-          var temp = s.split(' ')
-          var tempDate = temp[0].split('-')
-          var tempDisease = temp.slice(1,temp.length).join(' ')
+          temp = s.split(' ')
+          tempDate = temp[0].split('-')
+          tempDisease = temp.slice(1,temp.length).join(' ')
           date = addZero(tempDate[0]) + '-' + map.get(addZero(tempDate[1])) + '-' + tempDate[2]
           disease = tempDisease
       } else if(DATE_SPACE_DISEASE.test(s)){
           console.log("DATE_SPACE_DISEASE")
-          var temp = s.split(' ')
-          var tempDisease = temp.slice(3,temp.length).join(' ')
+          temp = s.split(' ')
+          tempDisease = temp.slice(3,temp.length).join(' ')
           date = addZero(temp[0]) + '-' + map.get(addZero(temp[1])) + '-' + temp[2]
           disease = tempDisease
       }
       
       else if (DATE_MONTH_SLASH_DISEASE.test(s)){
           console.log("DATE_MONTH_SLASH_DISEASE")
-          var temp = s.split(' ')
-          var tempDate = temp[0].split('/')
-          var tempDisease = temp.slice(1,temp.length).join(' ')
+          temp = s.split(' ')
+          tempDate = temp[0].split('/')
+          tempDisease = temp.slice(1,temp.length).join(' ')
           date = addZero(tempDate[0]) + '-' + getDateWord(tempDate[1],map) + '-' + tempDate[2]
           disease = tempDisease
       } else if (DATE_MONTH_STRIP_DISEASE.test(s)){
           console.log("DATE_MONTH_STRIP_DISEASE")
-          var temp = s.split(' ')
-          var tempDate = temp[0].split('-')
-          var tempDisease = temp.slice(1,temp.length).join(' ')
+          temp = s.split(' ')
+          tempDate = temp[0].split('-')
+          tempDisease = temp.slice(1,temp.length).join(' ')
           date = addZero(tempDate[0]) + '-' + getDateWord(tempDate[1],map) + '-' + tempDate[2]
           disease = tempDisease
       } else if (DATE_MONTH_SPACE_DISEASE.test(s)){
           console.log("DATE_MONTH_SPACE_DISEASE")
-          var temp = s.split(' ')
-          var tempDisease = temp.slice(3,temp.length).join(' ')
+          temp = s.split(' ')
+          tempDisease = temp.slice(3,temp.length).join(' ')
           date = addZero(temp[0]) + '-' + getDateWord(temp[1],map) + '-' + temp[2]
           disease = tempDisease
       } else if(DISEASE_ONLY.test(s)){

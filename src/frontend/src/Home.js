@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col'
 import banner from './assets/1.png'
 import './styles/Home.css'
 
-const ORIGINAL_LINES = ["DNA-Matching"];
+// const ORIGINAL_LINES = ["DNA-Matching"];
 const DESCRIPTION_LINES = [
   "DNA-Matching is a program to analyze DNA given by user to determine the disease, similar to the DNA. Besides, you can also input new pattern to DNA with various diseases."
 ]

@@ -10,11 +10,8 @@ import './styles/App.css';
 
 // Import Libs
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  Routes
 } from "react-router-dom";
 
 function App() {
