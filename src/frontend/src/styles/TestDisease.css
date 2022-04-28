@@ -1,0 +1,116 @@
+.test h1{
+    font-size: 5vh;
+    margin: auto;
+    margin-bottom: 1vh;
+}
+
+.test{
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    font-family: 'Tienne', serif;
+    width: 100%;
+}
+
+.test .left{
+    margin-right: 10vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.test .content{
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.test .form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 1vh;
+    background: rgba(17, 62, 87, 0.4);
+    backdrop-filter: blur(200px); 
+    border-radius: 10px;
+    padding: 4vh;
+    width: 60vh;
+    height: 60vh;
+}
+
+/*
+
+.test .form .form-group{
+    flex-direction: column;
+    text-align: center;
+}
+.test .form .form-group label{
+    font-size: 1.5vh;
+    margin-bottom: 1vh;
+}
+
+ */
+
+.form-check {
+    display:flex;
+    margin-top: -10px;
+    flex-direction: row;
+    column-gap: 50px;
+    justify-content: center;
+    font-size: 12px;
+}
+
+
+.test .form .form-group .form-control{
+    width: 40vh;
+    height: 5vh;
+    border-radius: 5px;
+    border: solid 1px white;
+    background: rgba(17, 62, 87, 0.5);  
+    color: white;
+    font-size: 2vh;
+    margin-bottom: 25px;
+}
+
+.test .form button{
+    width: 26vh;
+    height: 5vh;
+    border-radius: 7px;
+    border: none;
+    color: black;
+    font-size: 2vh;
+    margin-top: 2vh;
+}
+
+.test .right {
+    margin-left: 1vh;
+    text-align: center;
+}
+
+.test .right h1{
+    font-size: 6vh;
+    margin-bottom: 1vh;
+    font-weight: bold;
+    margin: 3vh 0;
+}
+
+.test .right h2{
+    font-size: 5vh;
+    margin-bottom: 1vh;
+    margin: 3vh 0;
+}
+.test .right h3{
+    font-size: 3vh;
+    margin-bottom: 1vh;
+    margin: 3vh 0;
+}
+
+
+.test .right p{
+    font-size: 1.5vh;
+    margin-bottom: 1vh;
+    margin: 3vh 0;
+}

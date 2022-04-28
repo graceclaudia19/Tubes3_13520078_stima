@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Tienne&display=swap');
+
+.home{
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    font-family: 'Tienne', serif;
+    padding-top: 5%;
+}
+
+.home .content{
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    /* width: fit-content; */
+    margin: 0;
+}
+
+.home .content p{
+    font-size: 2vh;
+    margin-bottom: 1vh;
+}
+
+.home .content img{
+    width: 50vh;
+    height: 50vh;
+    margin-left: 5%;
+}
+
+/* animation text show delay */
+#first_landing_text::before {
+    content: "Welcome to";
+    font-size: 4vh;
+    margin-bottom: 1vh;
+    animation: fadein 3s;
+    -moz-animation: fadein 3s; /* Firefox */
+    -webkit-animation: fadein 3s; /* Safari and Chrome */
+    -o-animation: fadein 3s; /* Opera */
+}
+
+#second_landing_text::before {
+    content: "DNA-Matching";
+    font-size: 8vh;
+    font-weight: bold;
+    margin-bottom: 1vh;
+    animation: fadein 3s;
+    -moz-animation: fadein 3s; /* Firefox */
+    -webkit-animation: fadein 3s; /* Safari and Chrome */
+    -o-animation: fadein 3s; /* Opera */
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
