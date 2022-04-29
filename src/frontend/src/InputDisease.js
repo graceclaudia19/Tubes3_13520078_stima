@@ -47,7 +47,10 @@ const InputDisease = () => {
           params: {},
         }
       ).then(res => {
-        const disease = res.data.data.data
+        let disease = res.data.data.data
+        if (disease == null) {
+          disease = [""]
+        }
         var state = true
         for (let i = 0; i < disease.length; i++) {
           if (disease[i] === diseaseName.toLowerCase()) {
