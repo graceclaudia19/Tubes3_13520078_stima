@@ -128,7 +128,7 @@ const TestDisease = () => {
       var day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
       var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
       var today = new Date();
-      var date = day[today.getDay()] + ", " + today.getDate() + " " + month[(today.getMonth() + 1)] + " " + today.getFullYear();
+      var date = day[today.getDay()] + ", " + today.getDate() + " " + month[(today.getMonth())] + " " + today.getFullYear();
       if (resultShow){
         if (similarity <0){
           return(
