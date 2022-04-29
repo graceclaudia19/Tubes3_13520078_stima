@@ -50,7 +50,7 @@ The program was written in Golang, JavaScript, HTML, CSS using React framework a
 
 
 ## Overview
-![Overview](img/Overview.jpg)
+![Overview](https://user-images.githubusercontent.com/88304550/165973319-ccd5fbf9-8446-478b-8a49-f24928c24c80.png)
 
 
 ## Setup
