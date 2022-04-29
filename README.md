@@ -59,6 +59,9 @@ The program was written in Golang, JavaScript, HTML, CSS using React framework a
 - Download the whole folders and files in this repository or do clone the repository
 
 ### Compilation 
+To run in local:
+
+Frontend
 1. Clone this repository in your own local directory
 
     `git clone https://github.com/graceclaudia19/Tubes3_13520078_stima.git`
@@ -69,6 +72,12 @@ The program was written in Golang, JavaScript, HTML, CSS using React framework a
     
 3. Run `npm install` on the command line
 4. Run `npm run start` on the command line
+
+Backend 
+1. Navigate to `/src/backend` folder
+2. Run `go get .` to make sure all dependencies installed
+3. Run `go run main.go`
+4. **Recommended**: test the API using postman or thunder client on vscode extensions
 
 
 ## Project Status
@@ -89,10 +98,20 @@ All the specifications were implemented, including bonus.
 - Thanks to academic assistants
 - This project was created to fulfill our Big Project for IF2211 Algorithm Strategies
 
-## Library
+## Library, Language, Tools and Framework
+* [Node JS](https://nodejs.org/en/)
 * [React](https://reactjs.org/)
 * [Bootstrap](https://getbootstrap.com/)
 * [Axios](https://axios-http.com/docs/intro)
+* [Golang](https://go.dev/)
+* [Echo](https://echo.labstack.com/)
 
-## Contact
-Created by -Tania. 2022 All Rights Reserved.
+for testing purposes:
+* [Postman](https://www.postman.com/downloads/)
+
+Our website is accessible through [here](https://dna-matching-web.herokuapp.com/?#/)
+
+## Authors
+- Grace Claudia - 13520078
+- Patrick Amadeus - 13520109
+- Nelsen Putra - 13520130
