@@ -41,7 +41,7 @@ func levenshtein(word, pattern string) float64 {
 func MovingPatternSimilarity(word, pattern string) float64 {
 	/* I.S. word dan pattern terdefinisi, dipastikan len(word) >= len(pattern) */
 	/* F.S. menghasilkan ratio tertinggi kemiripan untuk setiap substring dengan panjang len(word) */
-	maxPercentage := 0.0
+	maxPercentage := 10.0
 	for i := 0; i < len(word)-len(pattern)+1; i++ {
 		percentage := (levenshtein(word[i:i+len(pattern)], pattern))
 		if percentage > maxPercentage {

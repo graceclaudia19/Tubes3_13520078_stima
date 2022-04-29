@@ -35,11 +35,6 @@ func ConnectDB() *mongo.Client {
 var DB *mongo.Client = ConnectDB()
 
 //getting database collections
-func GetCollection(client *mongo.Client, collectionName string) *mongo.Collection {
-	collection := client.Database("golangAPI").Collection(collectionName)
-	return collection
-}
-
 func GetCollectionDNA(client *mongo.Client, collectionName string) *mongo.Collection {
 	collection := client.Database("dna-disease").Collection(collectionName)
 	return collection

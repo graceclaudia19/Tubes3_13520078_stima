@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"fmt"
 	"main/models"
 	"main/responses"
 	"net/http"
@@ -28,8 +27,6 @@ func CheckInputForDisease(c echo.Context) error {
 	}
 
 	dnaToCheck := diseaseInput.Input
-
-	fmt.Println(dnaToCheck)
 
 	//check if the dna sequence is valid
 	matched, _ := regexp.MatchString("^[ATCG]+$", dnaToCheck)
