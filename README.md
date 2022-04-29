@@ -50,25 +50,25 @@ The program was written in Golang, JavaScript, HTML, CSS using React framework a
 
 
 ## Overview
-![Overview](img/GUIExample.jpg)
+![Overview](img/Overview.jpg)
 
 
 ## Setup
 ### Installation
-- Download and install [Visual Studio](https://visualstudio.microsoft.com/vs/) 
 - Install the whole modules and [libraries](#library) used in the source code
 - Download the whole folders and files in this repository or do clone the repository
 
 ### Compilation 
 1. Clone this repository in your own local directory
 
-    `git clone https://github.com/nelsenputra/Tubes2_13520126.git`
+    `git clone https://github.com/graceclaudia19/Tubes3_13520078_stima.git`
 
 2. Open the command line and change the directory to 'frontend' folder
 
-    `cd Tubes3_13520078/src/frontend`
+    `cd Tubes3_13520078_stima/src/frontend`
     
-3. Run `run npm start` on the command line
+3. Run `npm install` on the command line
+4. Run `npm run start` on the command line
 
 
 ## Project Status
@@ -90,7 +90,9 @@ All the specifications were implemented, including bonus.
 - This project was created to fulfill our Big Project for IF2211 Algorithm Strategies
 
 ## Library
-* [MSAGL](https://www.microsoft.com/en-us/research/project/microsoft-automatic-graph-layout/)
+* [React](https://reactjs.org/)
+* [Bootstrap](https://getbootstrap.com/)
+* [Axios](https://axios-http.com/docs/intro)
 
 ## Contact
 Created by -Tania. 2022 All Rights Reserved.
